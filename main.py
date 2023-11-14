@@ -46,7 +46,7 @@ with gr.Blocks() as demo:
                       placeholder="Enter your text and then click on the \"Image Generate\" button, "
                                   "or simply press the Enter key.")
     btn = gr.Button("Image Generate")
-    output_image = gr.Image(label="Image Output", height=512, width=512)
+    output_image = gr.Image(label="Image Output")
 
     text.submit(fn=generate_image, inputs=[text, model, quality, size], outputs=output_image, api_name="generate_image")
     btn.click(fn=generate_image, inputs=[text, model, quality, size], outputs=output_image, api_name=False)
